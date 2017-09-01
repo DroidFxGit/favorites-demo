@@ -14,6 +14,10 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let service = FavoriteSectionsService()
+        service.favoriteSectionsFromService { (sections, error) in
+            print("niceee!!!")
+        }
     }
 
     override func didReceiveMemoryWarning() {
