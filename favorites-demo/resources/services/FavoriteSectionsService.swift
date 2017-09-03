@@ -19,12 +19,18 @@ class FavoriteSectionsService: NSObject {
         
         let url = URL(string: self.url)!
         let task: URLSessionDataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            do {
-                let sections: [FavoriteSection] = try unbox(data: data!)
-                completion(sections, nil)
-            }catch {
+            if data != nil {
+                do {
+                    let sections: [FavoriteSection] = try unbox(data: data!)
+                    completion(sections, nil)
+                }catch {
+                    completion(nil, error)
+                }
+            }
+            else {
                 completion(nil, error)
             }
+           
         }
         
         task.resume()

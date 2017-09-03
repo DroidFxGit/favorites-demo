@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        configureMainView()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let session = SessionManager(window: window)
+        session.configureMainScreen()
         return true
     }
 
@@ -38,14 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         
-    }
-
-
-    func configureMainView() {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let rootView = FavoritesViewController()
-        self.window?.rootViewController = rootView
-        self.window?.makeKeyAndVisible()
     }
 }
 
