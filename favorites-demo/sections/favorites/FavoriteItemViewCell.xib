@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FavoriteItemViewCell" customModule="favorites_demo" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favoriteIdentifier" id="gTV-IL-0wX" customClass="FavoriteItemViewCell" customModule="favorites_demo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -20,24 +20,31 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otn-aE-Lag">
                         <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IaM-jx-Grn">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-j8-5lL">
                         <rect key="frame" x="146" y="4" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="24" id="DiH-5a-aIn"/>
-                            <constraint firstAttribute="height" constant="24" id="GrN-QQ-eLF"/>
+                            <constraint firstAttribute="width" constant="24" id="BKF-ao-rWI"/>
+                            <constraint firstAttribute="height" constant="24" id="TRo-Nw-Hec"/>
                         </constraints>
-                    </imageView>
+                        <connections>
+                            <action selector="onFavoriteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="SW9-ta-HAj"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="otn-aE-Lag" secondAttribute="trailing" id="0Yi-54-7Av"/>
-                <constraint firstAttribute="trailing" secondItem="IaM-jx-Grn" secondAttribute="trailing" constant="4" id="8bH-Xr-0MV"/>
                 <constraint firstAttribute="bottom" secondItem="otn-aE-Lag" secondAttribute="bottom" id="Ks2-dy-XN0"/>
-                <constraint firstItem="IaM-jx-Grn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="REw-LV-hUU"/>
+                <constraint firstAttribute="trailing" secondItem="7gY-j8-5lL" secondAttribute="trailing" constant="4" id="VX9-ER-mUI"/>
+                <constraint firstItem="7gY-j8-5lL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="jzs-mD-39G"/>
                 <constraint firstItem="otn-aE-Lag" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lZo-WS-Rlb"/>
                 <constraint firstItem="otn-aE-Lag" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uvR-Vu-Th9"/>
             </constraints>
             <size key="customSize" width="120" height="120"/>
+            <connections>
+                <outlet property="favoriteButton" destination="7gY-j8-5lL" id="qAH-sZ-bwG"/>
+                <outlet property="mainImageView" destination="otn-aE-Lag" id="Yfm-8r-tor"/>
+            </connections>
             <point key="canvasLocation" x="60" y="87"/>
         </collectionViewCell>
     </objects>

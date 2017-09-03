@@ -12,6 +12,7 @@ class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     fileprivate var sections: [FavoriteSection]?
+    fileprivate var adapter: FavoritesViewAdapter?
     
     init(sections: [FavoriteSection]) {
         self.sections = sections
@@ -24,7 +25,11 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        adapter = FavoritesViewAdapter(collectionView: collectionView, sections: sections!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
     }
 
 }

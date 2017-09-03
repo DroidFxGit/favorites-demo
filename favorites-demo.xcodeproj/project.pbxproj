@@ -18,6 +18,9 @@
 		38DE78711F5758D600F33AC7 /* favorites_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE78701F5758D600F33AC7 /* favorites_demoTests.swift */; };
 		38DE787D1F57591000F33AC7 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE787B1F57591000F33AC7 /* FavoritesViewController.swift */; };
 		38DE787E1F57591000F33AC7 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE787C1F57591000F33AC7 /* FavoritesViewController.xib */; };
+		522E1DB31F5C890C003D6C48 /* FavoritesCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB21F5C890C003D6C48 /* FavoritesCellProtocol.swift */; };
+		522E1DB51F5CA9FF003D6C48 /* FavoritesModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB41F5CA9FF003D6C48 /* FavoritesModelView.swift */; };
+		522E1DB71F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */; };
 		524CFCF61F58E48F00FA2586 /* FavoriteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CFCF51F58E48F00FA2586 /* FavoriteSection.swift */; };
 		524CFCFA1F590DBC00FA2586 /* FavoriteSectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CFCF91F590DBC00FA2586 /* FavoriteSectionsService.swift */; };
 		52FDF2BB1F5B70B90068335E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FDF2BA1F5B70B90068335E /* SessionManager.swift */; };
@@ -54,6 +57,9 @@
 		38DE787B1F57591000F33AC7 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = sections/favorites/FavoritesViewController.swift; sourceTree = "<group>"; };
 		38DE787C1F57591000F33AC7 /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoritesViewController.xib; path = sections/favorites/FavoritesViewController.xib; sourceTree = "<group>"; };
 		486EBFAFD36F96CA31F0D580 /* Pods_favorites_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_favorites_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522E1DB21F5C890C003D6C48 /* FavoritesCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesCellProtocol.swift; path = resources/protocols/FavoritesCellProtocol.swift; sourceTree = "<group>"; };
+		522E1DB41F5CA9FF003D6C48 /* FavoritesModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesModelView.swift; path = presenters/FavoritesModelView.swift; sourceTree = "<group>"; };
+		522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionFavoritesModelView.swift; path = presenters/CollectionFavoritesModelView.swift; sourceTree = "<group>"; };
 		524CFCF51F58E48F00FA2586 /* FavoriteSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteSection.swift; path = models/FavoriteSection.swift; sourceTree = "<group>"; };
 		524CFCF91F590DBC00FA2586 /* FavoriteSectionsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteSectionsService.swift; path = resources/services/FavoriteSectionsService.swift; sourceTree = "<group>"; };
 		52FDF2BA1F5B70B90068335E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = resources/managers/SessionManager.swift; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 		3867E79C1F5761F200B10B42 /* presenters */ = {
 			isa = PBXGroup;
 			children = (
+				522E1DB41F5CA9FF003D6C48 /* FavoritesModelView.swift */,
+				522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */,
 			);
 			name = presenters;
 			sourceTree = "<group>";
@@ -178,9 +186,17 @@
 			name = favorites;
 			sourceTree = "<group>";
 		};
+		522E1DB81F5CC6A6003D6C48 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		524CFCF71F590B4B00FA2586 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				522E1DB81F5CC6A6003D6C48 /* extensions */,
 				52FDF2C41F5B948C0068335E /* protocols */,
 				52FDF2C11F5B917C0068335E /* adapters */,
 				52FDF2B91F5B70950068335E /* managers */,
@@ -225,6 +241,7 @@
 		52FDF2C41F5B948C0068335E /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				522E1DB21F5C890C003D6C48 /* FavoritesCellProtocol.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -446,12 +463,15 @@
 				38DE787D1F57591000F33AC7 /* FavoritesViewController.swift in Sources */,
 				524CFCFA1F590DBC00FA2586 /* FavoriteSectionsService.swift in Sources */,
 				3867E7A31F57658600B10B42 /* CollectionItemViewCell.swift in Sources */,
+				522E1DB31F5C890C003D6C48 /* FavoritesCellProtocol.swift in Sources */,
 				524CFCF61F58E48F00FA2586 /* FavoriteSection.swift in Sources */,
 				3867E79F1F57622700B10B42 /* FavoriteItemViewCell.swift in Sources */,
 				52FDF2BB1F5B70B90068335E /* SessionManager.swift in Sources */,
 				52FDF2C31F5B91C40068335E /* FavoritesViewAdapter.swift in Sources */,
+				522E1DB71F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift in Sources */,
 				38DE785C1F5758D600F33AC7 /* AppDelegate.swift in Sources */,
 				52FDF2BF1F5B7AF90068335E /* SplashViewController.swift in Sources */,
+				522E1DB51F5CA9FF003D6C48 /* FavoritesModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

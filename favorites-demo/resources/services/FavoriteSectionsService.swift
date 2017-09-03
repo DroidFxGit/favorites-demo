@@ -10,6 +10,7 @@ import UIKit
 import Unbox
 
 typealias requestCompletionHandler = ([FavoriteSection]?, Error?) -> Void
+typealias imageCompletionHandler = (UIImage, Error) -> Void
 
 class FavoriteSectionsService: NSObject {
     
