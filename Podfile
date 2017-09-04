@@ -4,6 +4,7 @@ target 'favorites-demo' do
   use_frameworks!
   
   pod "Unbox"
+  pod "SDWebImage/WebP"
 
   target 'favorites-demoTests' do
     inherit! :search_paths

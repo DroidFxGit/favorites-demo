@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
-typealias TextWithImagePresentable = TextPresentable & ImagePresentable
+typealias TextWithImagePresentable = TextPresentable & ImagePresentable & UrlPresentable
 
 class CollectionItemViewCell: UICollectionViewCell {
 
@@ -28,9 +29,9 @@ class CollectionItemViewCell: UICollectionViewCell {
     func configure(with presenter: TextWithImagePresentable) {
         delegate = presenter
         
-        firstImageView.image = presenter.firstImage
-        secondImageView.image = presenter.secondImage
-        thirdImageView.image = presenter.thirdImage
+        firstImageView.sd_setImage(with: presenter.mainImageUrl, placeholderImage: presenter.placeHolderImage, options: .refreshCached)
+        secondImageView.image = presenter.placeHolderImage
+        thirdImageView.image = presenter.placeHolderImage
         
         titleLabel.text = presenter.title
         counterLabel.text = presenter.counter

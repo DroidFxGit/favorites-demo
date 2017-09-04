@@ -12,10 +12,10 @@ import UIKit
 
 struct CollectionFavoritesModelView: TextWithImagePresentable {
     
-    fileprivate var sections: [FavoriteSection]?
+    fileprivate var product: Product?
     
-    init(sections: [FavoriteSection]) {
-        self.sections = sections
+    init(product: Product) {
+        self.product = product
     }
 }
 
@@ -24,9 +24,7 @@ extension CollectionFavoritesModelView {
     var title: String { return "TBDString" }
     var counter: String { return "TBDString" }
     
-    var mainImage: UIImage { return UIImage(named: "favorited")! }
+    var placeHolderImage: UIImage { return UIImage(named: "unfavorited")! }
     var buttonImage: UIImage { return UIImage(named: "favorited")! }
-    var firstImage: UIImage { return UIImage(named: "favorited")! }
-    var secondImage: UIImage { return UIImage(named: "favorited")! }
-    var thirdImage: UIImage { return UIImage(named: "favorited")! }
+    var mainImageUrl: URL { return URL(string: (product?.imageUrl)!)! }
 }

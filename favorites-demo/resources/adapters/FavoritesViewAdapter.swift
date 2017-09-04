@@ -62,15 +62,17 @@ extension FavoritesViewAdapter: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = indexPath.section
+        let item: FavoriteSection = sections![section]
+        let product = item.product(at: indexPath.row)
         
         switch section {
         case itemSection.firstSection.hashValue:
-            let collectionsPresenter = CollectionFavoritesModelView(sections: sections!)
+            let collectionsPresenter = CollectionFavoritesModelView(product: product)
             let collectionsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionIdentifier", for: indexPath) as! CollectionItemViewCell
             collectionsCell.configure(with: collectionsPresenter)
             return collectionsCell
         case itemSection.secondSection.hashValue:
-            let favoritesPresenter = FavoritesModelView(sections: sections!)
+            let favoritesPresenter = FavoritesModelView(product: product)
             let favoritesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoriteIdentifier", for: indexPath) as! FavoriteItemViewCell
             favoritesCell.configure(with: favoritesPresenter)
             return favoritesCell

@@ -14,11 +14,12 @@ protocol TextPresentable {
 }
 
 protocol ImagePresentable {
-    var mainImage: UIImage { get }
     var buttonImage: UIImage { get }
-    var firstImage: UIImage { get }
-    var secondImage: UIImage { get }
-    var thirdImage: UIImage { get }
+    var placeHolderImage: UIImage { get }
+}
+
+protocol UrlPresentable {
+    var mainImageUrl: URL { get }
 }
 
 protocol ButtonPresentable {

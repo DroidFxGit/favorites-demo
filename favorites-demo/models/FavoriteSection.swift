@@ -19,12 +19,17 @@ struct FavoriteSection {
     let visibility: String
     let products: [String: Product]
     
-    func arrayProducts() -> [Product] {
+    fileprivate func arrayProducts() -> [Product] {
         var array = [Product]()
         for product in products {
             array.append(product.value)
         }
         return array
+    }
+    
+    func product(at index: Int) -> Product {
+        let products = self.arrayProducts()
+        return products[index]
     }
     
     func numberOfItems() -> Int {
@@ -39,7 +44,7 @@ struct Owner {
 }
 
 struct Product {
-    let identifier: Double
+    let identifier: Int
     let name: String
     let wishListPrice: Double
     let slug: String

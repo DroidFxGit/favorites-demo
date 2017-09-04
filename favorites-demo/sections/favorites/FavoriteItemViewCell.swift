@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
-typealias ImageWithButtonPresentable = ImagePresentable & ButtonPresentable
+typealias ImageWithButtonPresentable = ImagePresentable & ButtonPresentable & UrlPresentable
 
 class FavoriteItemViewCell: UICollectionViewCell {
 
@@ -24,7 +25,7 @@ class FavoriteItemViewCell: UICollectionViewCell {
     func configure(with presenter: ImageWithButtonPresentable) {
         delegate = presenter
         
-        mainImageView.image = presenter.mainImage
+        mainImageView.sd_setImage(with: presenter.mainImageUrl, placeholderImage: presenter.placeHolderImage, options: .refreshCached)
         
         let imageButton = presenter.buttonImage
         favoriteButton.setBackgroundImage(imageButton, for: .normal)
