@@ -29,8 +29,7 @@ class SessionManager: NSObject {
             if sections != nil {
                 DispatchQueue.main.async(execute: { () -> Void in
                     let favoritesView = FavoritesViewController(sections: sections!)
-                    let navigation = UINavigationController(rootViewController: favoritesView)
-                    self.configureRootView(with: navigation)
+                    self.configureRootView(with: favoritesView)
                 })
             }
         }

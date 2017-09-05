@@ -20,6 +20,8 @@
 		38DE787E1F57591000F33AC7 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE787C1F57591000F33AC7 /* FavoritesViewController.xib */; };
 		38E966631F5EFA8E0001F8C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E966621F5EFA8E0001F8C9 /* Constants.swift */; };
 		38E966651F5F04A50001F8C9 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E966641F5F04A50001F8C9 /* BadgesView.swift */; };
+		38E966741F5F4C9F0001F8C9 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E966721F5F4C9F0001F8C9 /* CollectionHeaderView.swift */; };
+		38E966751F5F4C9F0001F8C9 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E966731F5F4C9F0001F8C9 /* CollectionHeaderView.xib */; };
 		522E1DB31F5C890C003D6C48 /* FavoritesCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB21F5C890C003D6C48 /* FavoritesCellProtocol.swift */; };
 		522E1DB51F5CA9FF003D6C48 /* FavoritesModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB41F5CA9FF003D6C48 /* FavoritesModelView.swift */; };
 		522E1DB71F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */; };
@@ -61,6 +63,8 @@
 		38DE787C1F57591000F33AC7 /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoritesViewController.xib; path = sections/favorites/FavoritesViewController.xib; sourceTree = "<group>"; };
 		38E966621F5EFA8E0001F8C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = resources/utils/Constants.swift; sourceTree = "<group>"; };
 		38E966641F5F04A50001F8C9 /* BadgesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BadgesView.swift; path = resources/utils/BadgesView.swift; sourceTree = "<group>"; };
+		38E966721F5F4C9F0001F8C9 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHeaderView.swift; path = sections/collectionHeader/CollectionHeaderView.swift; sourceTree = "<group>"; };
+		38E966731F5F4C9F0001F8C9 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionHeaderView.xib; path = sections/collectionHeader/CollectionHeaderView.xib; sourceTree = "<group>"; };
 		486EBFAFD36F96CA31F0D580 /* Pods_favorites_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_favorites_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		522E1DB21F5C890C003D6C48 /* FavoritesCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesCellProtocol.swift; path = resources/protocols/FavoritesCellProtocol.swift; sourceTree = "<group>"; };
 		522E1DB41F5CA9FF003D6C48 /* FavoritesModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesModelView.swift; path = presenters/FavoritesModelView.swift; sourceTree = "<group>"; };
@@ -173,7 +177,7 @@
 		38DE787F1F57591700F33AC7 /* sections */ = {
 			isa = PBXGroup;
 			children = (
-				38E966661F5F1D990001F8C9 /* collectionHeader */,
+				38E9666F1F5F44140001F8C9 /* collectionHeader */,
 				52FDF2BC1F5B7AB50068335E /* splashScreen */,
 				38DE78801F57592300F33AC7 /* favorites */,
 			);
@@ -193,9 +197,11 @@
 			name = favorites;
 			sourceTree = "<group>";
 		};
-		38E966661F5F1D990001F8C9 /* collectionHeader */ = {
+		38E9666F1F5F44140001F8C9 /* collectionHeader */ = {
 			isa = PBXGroup;
 			children = (
+				38E966721F5F4C9F0001F8C9 /* CollectionHeaderView.swift */,
+				38E966731F5F4C9F0001F8C9 /* CollectionHeaderView.xib */,
 			);
 			name = collectionHeader;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				38DE78661F5758D600F33AC7 /* LaunchScreen.storyboard in Resources */,
 				52FDF2C01F5B7AF90068335E /* SplashViewController.xib in Resources */,
 				38DE787E1F57591000F33AC7 /* FavoritesViewController.xib in Resources */,
+				38E966751F5F4C9F0001F8C9 /* CollectionHeaderView.xib in Resources */,
 				38DE78631F5758D600F33AC7 /* Assets.xcassets in Resources */,
 				3867E7A01F57622700B10B42 /* FavoriteItemViewCell.xib in Resources */,
 				3867E7A41F57658600B10B42 /* CollectionItemViewCell.xib in Resources */,
@@ -503,6 +510,7 @@
 				524CFCFA1F590DBC00FA2586 /* FavoriteSectionsService.swift in Sources */,
 				3867E7A31F57658600B10B42 /* CollectionItemViewCell.swift in Sources */,
 				522E1DB31F5C890C003D6C48 /* FavoritesCellProtocol.swift in Sources */,
+				38E966741F5F4C9F0001F8C9 /* CollectionHeaderView.swift in Sources */,
 				524CFCF61F58E48F00FA2586 /* FavoriteSection.swift in Sources */,
 				3867E79F1F57622700B10B42 /* FavoriteItemViewCell.swift in Sources */,
 				52FDF2BB1F5B70B90068335E /* SessionManager.swift in Sources */,

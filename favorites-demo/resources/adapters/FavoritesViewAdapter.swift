@@ -40,10 +40,12 @@ extension FavoritesViewAdapter {
         
         collectionView?.register(UINib(nibName: "CollectionItemViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionIdentifier")
         collectionView?.register(UINib(nibName: "FavoriteItemViewCell", bundle: nil), forCellWithReuseIdentifier: "favoriteIdentifier")
+        collectionView?.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerIdentifier")
     }
     
     fileprivate func configureItemsLayout() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.headerReferenceSize = CGSize(width: (collectionView?.frame.size.width)!, height: 60.0)
         layout.sectionInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         layout.itemSize = CGSize(width: 174, height: 174)
         layout.minimumInteritemSpacing = 0
@@ -95,4 +97,25 @@ extension FavoritesViewAdapter: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return numberOfSections
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let section = indexPath.section
+        
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerIdentifier", for: indexPath) as? CollectionHeaderView else { return UICollectionReusableView() }
+            
+        let titleText: String?
+        
+        switch section {
+        case itemSection.firstSection.hashValue:
+            titleText = "TBDString"
+        case itemSection.secondSection.hashValue:
+            titleText = "OtherTBD"
+        default:
+            titleText = ""
+        }
+        
+        headerView.titleSectionLabel.text = titleText
+        return headerView
+    }
+    
 }
