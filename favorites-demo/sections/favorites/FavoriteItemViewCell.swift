@@ -12,6 +12,8 @@ import SDWebImage
 typealias ImageWithButtonPresentable = ImagePresentable & ButtonPresentable & UrlPresentable
 
 class FavoriteItemViewCell: UICollectionViewCell {
+    
+    fileprivate let kRadiusSize: CGFloat = 10.0
 
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
@@ -20,6 +22,7 @@ class FavoriteItemViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.cornerRadius = kRadiusSize
     }
     
     func configure(with presenter: ImageWithButtonPresentable) {

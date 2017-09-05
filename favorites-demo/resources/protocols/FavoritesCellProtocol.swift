@@ -10,7 +10,7 @@ import UIKit
 
 protocol TextPresentable {
     var title: String { get }
-    var counter: String { get}
+    var counter: String! { get}
 }
 
 protocol ImagePresentable {
@@ -20,6 +20,12 @@ protocol ImagePresentable {
 
 protocol UrlPresentable {
     var mainImageUrl: URL { get }
+}
+
+protocol UrlCollectionPresentable {
+    var firstImageUrl: URL { get }
+    var secondImageUrl: URL { get }
+    var thirdImageUrl: URL { get }
 }
 
 protocol ButtonPresentable {

@@ -9,6 +9,12 @@
 import Foundation
 import Unbox
 
+enum topThreeItems {
+    case first
+    case second
+    case third
+}
+
 struct FavoriteSection {
     let identifier: Int
     let name: String
@@ -27,9 +33,9 @@ struct FavoriteSection {
         return array
     }
     
-    func product(at index: Int) -> Product {
+    func product(at index: topThreeItems) -> Product {
         let products = self.arrayProducts()
-        return products[index]
+        return products[index.hashValue]
     }
     
     func numberOfItems() -> Int {

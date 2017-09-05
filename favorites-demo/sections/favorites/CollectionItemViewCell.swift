@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-typealias TextWithImagePresentable = TextPresentable & ImagePresentable & UrlPresentable
+typealias TextWithImagePresentable = TextPresentable & ImagePresentable & UrlCollectionPresentable
 
 class CollectionItemViewCell: UICollectionViewCell {
 
@@ -29,9 +29,9 @@ class CollectionItemViewCell: UICollectionViewCell {
     func configure(with presenter: TextWithImagePresentable) {
         delegate = presenter
         
-        firstImageView.sd_setImage(with: presenter.mainImageUrl, placeholderImage: presenter.placeHolderImage, options: .refreshCached)
-        secondImageView.image = presenter.placeHolderImage
-        thirdImageView.image = presenter.placeHolderImage
+        firstImageView.sd_setImage(with: presenter.firstImageUrl, placeholderImage: presenter.placeHolderImage, options: .refreshCached)
+        secondImageView.sd_setImage(with: presenter.secondImageUrl, placeholderImage: presenter.placeHolderImage, options: .refreshCached)
+        thirdImageView.sd_setImage(with: presenter.thirdImageUrl, placeholderImage: presenter.placeHolderImage, options: .refreshCached)
         
         titleLabel.text = presenter.title
         counterLabel.text = presenter.counter

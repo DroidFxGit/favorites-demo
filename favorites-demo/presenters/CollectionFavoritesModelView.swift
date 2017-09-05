@@ -12,19 +12,21 @@ import UIKit
 
 struct CollectionFavoritesModelView: TextWithImagePresentable {
     
-    fileprivate var product: Product?
+    fileprivate var section: FavoriteSection!
     
-    init(product: Product) {
-        self.product = product
+    init(section: FavoriteSection) {
+        self.section = section
     }
 }
 
 extension CollectionFavoritesModelView {
     
-    var title: String { return "TBDString" }
-    var counter: String { return "TBDString" }
+    var title: String { return (section?.description)! }
+    var counter: String! {return String(describing: section.products.count)}
     
     var placeHolderImage: UIImage { return UIImage(named: "unfavorited")! }
     var buttonImage: UIImage { return UIImage(named: "favorited")! }
-    var mainImageUrl: URL { return URL(string: (product?.imageUrl)!)! }
+    var firstImageUrl: URL { return URL(string: section.product(at: .first).imageUrl)! }
+    var secondImageUrl: URL { return URL(string: section.product(at: .second).imageUrl)! }
+    var thirdImageUrl: URL { return URL(string: section.product(at: .third).imageUrl)! }
 }

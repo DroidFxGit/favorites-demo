@@ -23,6 +23,7 @@
 		522E1DB71F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */; };
 		524CFCF61F58E48F00FA2586 /* FavoriteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CFCF51F58E48F00FA2586 /* FavoriteSection.swift */; };
 		524CFCFA1F590DBC00FA2586 /* FavoriteSectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CFCF91F590DBC00FA2586 /* FavoriteSectionsService.swift */; };
+		52F7F6211F5E69B3001B53A4 /* CircledImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F6201F5E69B3001B53A4 /* CircledImageView.swift */; };
 		52FDF2BB1F5B70B90068335E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FDF2BA1F5B70B90068335E /* SessionManager.swift */; };
 		52FDF2BF1F5B7AF90068335E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FDF2BD1F5B7AF90068335E /* SplashViewController.swift */; };
 		52FDF2C01F5B7AF90068335E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FDF2BE1F5B7AF90068335E /* SplashViewController.xib */; };
@@ -62,6 +63,7 @@
 		522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionFavoritesModelView.swift; path = presenters/CollectionFavoritesModelView.swift; sourceTree = "<group>"; };
 		524CFCF51F58E48F00FA2586 /* FavoriteSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteSection.swift; path = models/FavoriteSection.swift; sourceTree = "<group>"; };
 		524CFCF91F590DBC00FA2586 /* FavoriteSectionsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteSectionsService.swift; path = resources/services/FavoriteSectionsService.swift; sourceTree = "<group>"; };
+		52F7F6201F5E69B3001B53A4 /* CircledImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircledImageView.swift; path = resources/utils/CircledImageView.swift; sourceTree = "<group>"; };
 		52FDF2BA1F5B70B90068335E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = resources/managers/SessionManager.swift; sourceTree = "<group>"; };
 		52FDF2BD1F5B7AF90068335E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = sections/splashScreen/SplashViewController.swift; sourceTree = "<group>"; };
 		52FDF2BE1F5B7AF90068335E /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SplashViewController.xib; path = sections/splashScreen/SplashViewController.xib; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		524CFCF71F590B4B00FA2586 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				52F7F61D1F5E6926001B53A4 /* utils */,
 				522E1DB81F5CC6A6003D6C48 /* extensions */,
 				52FDF2C41F5B948C0068335E /* protocols */,
 				52FDF2C11F5B917C0068335E /* adapters */,
@@ -211,6 +214,14 @@
 				524CFCF91F590DBC00FA2586 /* FavoriteSectionsService.swift */,
 			);
 			name = services;
+			sourceTree = "<group>";
+		};
+		52F7F61D1F5E6926001B53A4 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				52F7F6201F5E69B3001B53A4 /* CircledImageView.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 		52FDF2B91F5B70950068335E /* managers */ = {
@@ -473,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F7F6211F5E69B3001B53A4 /* CircledImageView.swift in Sources */,
 				38DE787D1F57591000F33AC7 /* FavoritesViewController.swift in Sources */,
 				524CFCFA1F590DBC00FA2586 /* FavoriteSectionsService.swift in Sources */,
 				3867E7A31F57658600B10B42 /* CollectionItemViewCell.swift in Sources */,

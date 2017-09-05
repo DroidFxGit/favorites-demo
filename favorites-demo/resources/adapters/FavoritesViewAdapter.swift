@@ -15,7 +15,9 @@ class FavoritesViewAdapter: NSObject {
         case secondSection
     }
     
-    fileprivate var sections: [FavoriteSection]?
+    fileprivate let numberOfSections = 2
+    fileprivate var sections: [FavoriteSection]!
+    fileprivate var totalProducts: [Product]!
     fileprivate weak var collectionView: UICollectionView?
     
     init(collectionView:UICollectionView, sections: [FavoriteSection]) {
@@ -31,6 +33,7 @@ class FavoritesViewAdapter: NSObject {
 extension FavoritesViewAdapter {
     
     fileprivate func configureAdapter() {
+        totalProducts = [Product]()
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.alwaysBounceVertical = true
@@ -41,11 +44,10 @@ extension FavoritesViewAdapter {
     
     fileprivate func configureItemsLayout() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let width = 174
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: width - 20, height: 174)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        layout.itemSize = CGSize(width: 174, height: 174)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 10
         collectionView!.collectionViewLayout = layout
     }
 }
@@ -56,22 +58,31 @@ extension FavoritesViewAdapter: UICollectionViewDelegate {
 extension FavoritesViewAdapter: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let products = sections?[section].products.values
-        return (products?.count)!
+        
+        totalProducts? += sections![section].products.values
+        
+        switch section {
+        case itemSection.firstSection.hashValue:
+            return sections.count
+        case itemSection.secondSection.hashValue:
+            return totalProducts.count
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = indexPath.section
-        let item: FavoriteSection = sections![section]
-        let product = item.product(at: indexPath.row)
         
         switch section {
         case itemSection.firstSection.hashValue:
-            let collectionsPresenter = CollectionFavoritesModelView(product: product)
+            let item: FavoriteSection = sections[indexPath.row]
+            let collectionsPresenter = CollectionFavoritesModelView(section: item)
             let collectionsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionIdentifier", for: indexPath) as! CollectionItemViewCell
             collectionsCell.configure(with: collectionsPresenter)
             return collectionsCell
         case itemSection.secondSection.hashValue:
+            let product = totalProducts[indexPath.row]
             let favoritesPresenter = FavoritesModelView(product: product)
             let favoritesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoriteIdentifier", for: indexPath) as! FavoriteItemViewCell
             favoritesCell.configure(with: favoritesPresenter)
@@ -82,6 +93,6 @@ extension FavoritesViewAdapter: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return (sections?.count)!
+        return numberOfSections
     }
 }
