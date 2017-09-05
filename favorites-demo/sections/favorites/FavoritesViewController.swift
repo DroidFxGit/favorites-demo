@@ -25,6 +25,7 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Constants.string(for: .Favoritos)
         adapter = FavoritesViewAdapter(collectionView: collectionView, sections: sections!)
     }
     

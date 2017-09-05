@@ -22,6 +22,10 @@ protocol UrlPresentable {
     var mainImageUrl: URL { get }
 }
 
+protocol BadgesViewPresentable {
+    var badgesView: BadgesView { get }
+}
+
 protocol UrlCollectionPresentable {
     var firstImageUrl: URL { get }
     var secondImageUrl: URL { get }

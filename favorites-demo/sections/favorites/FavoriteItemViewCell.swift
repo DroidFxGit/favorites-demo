@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-typealias ImageWithButtonPresentable = ImagePresentable & ButtonPresentable & UrlPresentable
+typealias ImageWithButtonPresentable = ImagePresentable & ButtonPresentable & UrlPresentable & BadgesViewPresentable
 
 class FavoriteItemViewCell: UICollectionViewCell {
     
@@ -17,6 +17,7 @@ class FavoriteItemViewCell: UICollectionViewCell {
 
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
+    
     
     private var delegate: ImageWithButtonPresentable?
     
@@ -33,6 +34,7 @@ class FavoriteItemViewCell: UICollectionViewCell {
         let imageButton = presenter.buttonImage
         favoriteButton.setBackgroundImage(imageButton, for: .normal)
         
+        self.addSubview(presenter.badgesView as UIView)
     }
 
     @IBAction func onFavoriteAction(_ sender: Any) {

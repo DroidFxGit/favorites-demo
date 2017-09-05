@@ -18,9 +18,13 @@ struct FavoritesModelView: ImageWithButtonPresentable {
 }
 
 extension FavoritesModelView {
-    var buttonImage: UIImage { return UIImage(named: "favorited")! }
-    var placeHolderImage: UIImage { return UIImage(named: "unfavorited")! }
+    var buttonImage: UIImage { return UIImage(named: Constants.string(for: .favorited))! }
+    var placeHolderImage: UIImage { return UIImage(named: Constants.string(for: .placeholder))! }
     var mainImageUrl: URL { return URL(string: (product?.imageUrl)!)! }
+}
+
+extension FavoritesModelView {
+    var badgesView: BadgesView { return BadgesView(product: product!).view()! }
 }
 
 
