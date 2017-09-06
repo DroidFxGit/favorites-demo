@@ -11,9 +11,15 @@ import UIKit
 class CollectionHeaderView: UICollectionReusableView {
 
     @IBOutlet weak var titleSectionLabel: UILabel!
+    fileprivate var delegate: TitleHeaderPresentable?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configure(with presenter: TitleHeaderPresentable) {
+        delegate = presenter
+        titleSectionLabel.text = presenter.titleHeaderText
     }
     
 }

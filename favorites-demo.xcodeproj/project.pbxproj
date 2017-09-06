@@ -27,6 +27,9 @@
 		522E1DB71F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */; };
 		524CFCF61F58E48F00FA2586 /* FavoriteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CFCF51F58E48F00FA2586 /* FavoriteSection.swift */; };
 		524CFCFA1F590DBC00FA2586 /* FavoriteSectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CFCF91F590DBC00FA2586 /* FavoriteSectionsService.swift */; };
+		52F7DCDC1F5F911E004A36FE /* FavoritesCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7DCDB1F5F911E004A36FE /* FavoritesCollectionViewFlowLayout.swift */; };
+		52F7DCDE1F5F92F9004A36FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52F7DCDD1F5F92F9004A36FE /* Localizable.strings */; };
+		52F7DCE01F5FA1F0004A36FE /* HeaderTitleModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7DCDF1F5FA1F0004A36FE /* HeaderTitleModelView.swift */; };
 		52F7F6211F5E69B3001B53A4 /* CircledImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F6201F5E69B3001B53A4 /* CircledImageView.swift */; };
 		52FDF2BB1F5B70B90068335E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FDF2BA1F5B70B90068335E /* SessionManager.swift */; };
 		52FDF2BF1F5B7AF90068335E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FDF2BD1F5B7AF90068335E /* SplashViewController.swift */; };
@@ -71,6 +74,9 @@
 		522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionFavoritesModelView.swift; path = presenters/CollectionFavoritesModelView.swift; sourceTree = "<group>"; };
 		524CFCF51F58E48F00FA2586 /* FavoriteSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteSection.swift; path = models/FavoriteSection.swift; sourceTree = "<group>"; };
 		524CFCF91F590DBC00FA2586 /* FavoriteSectionsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteSectionsService.swift; path = resources/services/FavoriteSectionsService.swift; sourceTree = "<group>"; };
+		52F7DCDB1F5F911E004A36FE /* FavoritesCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesCollectionViewFlowLayout.swift; path = resources/utils/FavoritesCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		52F7DCDD1F5F92F9004A36FE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		52F7DCDF1F5FA1F0004A36FE /* HeaderTitleModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderTitleModelView.swift; path = presenters/HeaderTitleModelView.swift; sourceTree = "<group>"; };
 		52F7F6201F5E69B3001B53A4 /* CircledImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircledImageView.swift; path = resources/utils/CircledImageView.swift; sourceTree = "<group>"; };
 		52FDF2BA1F5B70B90068335E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = resources/managers/SessionManager.swift; sourceTree = "<group>"; };
 		52FDF2BD1F5B7AF90068335E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = sections/splashScreen/SplashViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 			children = (
 				522E1DB41F5CA9FF003D6C48 /* FavoritesModelView.swift */,
 				522E1DB61F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift */,
+				52F7DCDF1F5FA1F0004A36FE /* HeaderTitleModelView.swift */,
 			);
 			name = presenters;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 				38DE78621F5758D600F33AC7 /* Assets.xcassets */,
 				38DE78641F5758D600F33AC7 /* LaunchScreen.storyboard */,
 				38DE78671F5758D600F33AC7 /* Info.plist */,
+				52F7DCDD1F5F92F9004A36FE /* Localizable.strings */,
 			);
 			path = "favorites-demo";
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 				52F7F6201F5E69B3001B53A4 /* CircledImageView.swift */,
 				38E966621F5EFA8E0001F8C9 /* Constants.swift */,
 				38E966641F5F04A50001F8C9 /* BadgesView.swift */,
+				52F7DCDB1F5F911E004A36FE /* FavoritesCollectionViewFlowLayout.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DE78661F5758D600F33AC7 /* LaunchScreen.storyboard in Resources */,
+				52F7DCDE1F5F92F9004A36FE /* Localizable.strings in Resources */,
 				52FDF2C01F5B7AF90068335E /* SplashViewController.xib in Resources */,
 				38DE787E1F57591000F33AC7 /* FavoritesViewController.xib in Resources */,
 				38E966751F5F4C9F0001F8C9 /* CollectionHeaderView.xib in Resources */,
@@ -511,6 +521,7 @@
 				3867E7A31F57658600B10B42 /* CollectionItemViewCell.swift in Sources */,
 				522E1DB31F5C890C003D6C48 /* FavoritesCellProtocol.swift in Sources */,
 				38E966741F5F4C9F0001F8C9 /* CollectionHeaderView.swift in Sources */,
+				52F7DCDC1F5F911E004A36FE /* FavoritesCollectionViewFlowLayout.swift in Sources */,
 				524CFCF61F58E48F00FA2586 /* FavoriteSection.swift in Sources */,
 				3867E79F1F57622700B10B42 /* FavoriteItemViewCell.swift in Sources */,
 				52FDF2BB1F5B70B90068335E /* SessionManager.swift in Sources */,
@@ -518,6 +529,7 @@
 				522E1DB71F5CAA2C003D6C48 /* CollectionFavoritesModelView.swift in Sources */,
 				38DE785C1F5758D600F33AC7 /* AppDelegate.swift in Sources */,
 				38E966631F5EFA8E0001F8C9 /* Constants.swift in Sources */,
+				52F7DCE01F5FA1F0004A36FE /* HeaderTitleModelView.swift in Sources */,
 				52FDF2BF1F5B7AF90068335E /* SplashViewController.swift in Sources */,
 				38E966651F5F04A50001F8C9 /* BadgesView.swift in Sources */,
 				522E1DB51F5CA9FF003D6C48 /* FavoritesModelView.swift in Sources */,

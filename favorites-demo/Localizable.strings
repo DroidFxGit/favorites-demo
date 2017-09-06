@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  favorites-demo
+
+  Created by Carlos Vázquez Gómez on 9/5/17.
+  Copyright © 2017 fx. All rights reserved.
+*/
+
+"titleCollectionSection" = "Todos mis favoritos";
+"titleFavoritesSection" = "Favoritos";

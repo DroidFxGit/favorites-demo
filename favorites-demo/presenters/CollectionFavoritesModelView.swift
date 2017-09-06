@@ -6,8 +6,6 @@
 //  Copyright © 2017 fx. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 struct CollectionFavoritesModelView: TextWithImagePresentable {

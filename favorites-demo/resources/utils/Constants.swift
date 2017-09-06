@@ -23,7 +23,8 @@ struct Constants {
         case PlusSquare
         case RefurbishedSquare
         case placeholder
-        case Favoritos
+        case titleCollectionSection
+        case titleFavoritesSection
     }
     
     static func string(for key: Key) -> String {

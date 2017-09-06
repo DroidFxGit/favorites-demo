@@ -8,12 +8,12 @@
 
 import UIKit
 
+enum itemSection {
+    case firstSection
+    case secondSection
+}
+
 class FavoritesViewAdapter: NSObject {
-    
-    fileprivate enum itemSection {
-        case firstSection
-        case secondSection
-    }
     
     fileprivate let numberOfSections = 2
     fileprivate var sections: [FavoriteSection]!
@@ -44,17 +44,26 @@ extension FavoritesViewAdapter {
     }
     
     fileprivate func configureItemsLayout() {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width: (collectionView?.frame.size.width)!, height: 60.0)
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        layout.itemSize = CGSize(width: 174, height: 174)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 10
+        let layout = FavoritesCollectionViewFlowLayout(collection: collectionView!)
         collectionView!.collectionViewLayout = layout
     }
 }
 
 extension FavoritesViewAdapter: UICollectionViewDelegate {
+}
+
+extension FavoritesViewAdapter: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == itemSection.secondSection.hashValue {
+            let width = collectionView.frame.width
+            return CGSize(width: (width - 5)/2.2, height: (width - 5)/2.2)
+        }
+        else {
+            return CGSize(width: 174, height: 178)
+        }
+        
+    }
 }
 
 extension FavoritesViewAdapter: UICollectionViewDataSource {
@@ -103,18 +112,8 @@ extension FavoritesViewAdapter: UICollectionViewDataSource {
         
         guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerIdentifier", for: indexPath) as? CollectionHeaderView else { return UICollectionReusableView() }
             
-        let titleText: String?
-        
-        switch section {
-        case itemSection.firstSection.hashValue:
-            titleText = "TBDString"
-        case itemSection.secondSection.hashValue:
-            titleText = "OtherTBD"
-        default:
-            titleText = ""
-        }
-        
-        headerView.titleSectionLabel.text = titleText
+        let presenter = HeaderTitleModelView(section: section, counter: totalProducts.count)
+        headerView.configure(with: presenter)
         return headerView
     }
     
